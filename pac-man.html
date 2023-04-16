@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pac-Man</title>
+  <style>
+    #game-board {
+      width: 400px;
+      height: 400px;
+      background-color: black;
+      position: relative;
+    }
+
+    .pacman {
+      width: 20px;
+      height: 20px;
+      background-color: yellow;
+      border-radius: 50%;
+      position: absolute;
+      top: 180px;
+      left: 180px;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-board">
+    <div class="pacman"></div>
+  </div>
+
+  <script>
+    const pacman = document.querySelector('.pacman');
+let x = 180;
+let y = 180;
+
+document.addEventListener('keydown', (event) => {
+  if (event.code === 'ArrowRight') {
+    x += 10;
+    pacman.style.left = x + 'px';
+  } else if (event.code === 'ArrowLeft') {
+    x -= 10;
+    pacman.style.left = x + 'px';
+  } else if (event.code === 'ArrowUp') {
+    y -= 10;
+    pacman.style.top = y + 'px';
+  } else if (event.code === 'ArrowDown') {
+    y += 10;
+    pacman.style.top = y + 'px';
+  }
+});
+  </script>
+</body>
+</html>
